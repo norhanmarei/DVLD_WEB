@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DVLD_WEB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6869ef80e91be2ce35d1089b0ff7f1ddb92fa34c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad7dd4580663d5e7ba5457255ab05118c64a102b")]
 [assembly: System.Reflection.AssemblyProductAttribute("DVLD_WEB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DVLD_WEB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

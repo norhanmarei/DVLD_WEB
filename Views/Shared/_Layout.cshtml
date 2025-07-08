@@ -11,20 +11,67 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DVLD_WEB</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- Applications Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Applications" ? "active" : "")"
+                               href="#" id="appsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Applications
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="appsdropdown">
+                                <li><a class="dropdown-item" asp-controller="applications" asp-action="DrivingLicensesServices">Driving Licenses Services</a></li>
+                                <li><a class="dropdown-item" asp-controller="applications" asp-action="ManageApplications">Manage Applications</a></li>
+                                <li><a class="dropdown-item" asp-controller="applications" asp-action="DetainLicenses">Detain Licenses</a></li>
+                                <li><a class="dropdown-item" asp-controller="applications" asp-action="ManageAppliactionTypes">Manage Application Types</a></li>
+                                <li><a class="dropdown-item" asp-controller="applications" asp-action="ManageTestTypes">Manage Test Types</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <!-- People Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle @(ViewContext.RouteData.Values["Controller"]?.ToString() == "People" ? "active" : "")"
+                               href="#" id="peopleDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                People
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="peopleDropdown">
+                                <li><a class="dropdown-item" asp-controller="People" asp-action="Index">View All</a></li>
+                                <li><a class="dropdown-item" asp-controller="People" asp-action="Create">Add Person</a></li>
+                            </ul>
+                        </li>
+                        <!-- Drivers Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Drivers" ? "active" : "")"
+                               href="#" id="driversDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Drivers
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="driversDropdown">
+                                <li><a class="dropdown-item" asp-controller="Drivers" asp-action="Index">Manage Drivers</a></li>
+                                <li><a class="dropdown-item" asp-controller="Drivers" asp-action="Register">Register Driver</a></li>
+                            </ul>
+                        </li>
+                        <!-- Users Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Users" ? "active" : "")"
+                               href="#" id="usersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Users
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="usersDropdown">
+                                <li><a class="dropdown-item" asp-controller="Users" asp-action="Index">All Users</a></li>
+                                <li><a class="dropdown-item" asp-controller="Users" asp-action="Create">New User</a></li>
+                            </ul>
+                        </li>
+                        <!-- Account Settings Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle @(ViewContext.RouteData.Values["Controller"]?.ToString() == "AccountSettings" ? "active" : "")"
+                               href="#" id="settingsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Account Settings
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="settingsDropdown">
+                                <li><a class="dropdown-item" asp-controller="AccountSettings" asp-action="Profile">Profile</a></li>
+                                <li><a class="dropdown-item" asp-controller="AccountSettings" asp-action="Security">Security</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -37,11 +84,6 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - DVLD_WEB - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
